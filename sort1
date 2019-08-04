@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+void directsort(int a[],int n){
+        int temp,i,j;
+        for (i=1;i<n;i++){
+            if (a[i]<a[i-1]){
+                temp=a[i];
+                for(j=i-1;j>=0&&a[j]>=temp;j--){
+                    a[j+1]=a[j];
+                }
+                a[j+1]=temp;
+            }
+        }
+}
+void print (int a[6],int n){
+        for (int i=0;i<n;i++){
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+}
+int main(){
+    int a[6]={6,5,4,3,2,1};
+    directsort(a,6);
+    print(a,6);
+}
